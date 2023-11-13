@@ -31,12 +31,27 @@ namespace GuitarShop.Controllers
                 products = context.Products
                     .OrderBy(p => p.ProductID).ToList();
             }
+
+
+            //Strings
+
+            else if (id == "Strings")
+            {
+                products = context.Products
+                    .Where(p => p.Category.Name == "Guitars" || p.Category.Name == "Basses")
+                    .OrderBy(p => p.ProductID)
+                    .ToList();
+            }
+
             else
             {
                 products = context.Products
                     .Where(p => p.Category.Name == id)
                     .OrderBy(p => p.ProductID).ToList();
             }
+
+
+
 
             // use ViewBag to pass data to view
             ViewBag.Categories = categories;
