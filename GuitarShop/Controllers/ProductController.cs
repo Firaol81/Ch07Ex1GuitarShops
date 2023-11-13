@@ -33,7 +33,7 @@ namespace GuitarShop.Controllers
             }
 
 
-            //Strings
+            //String
 
             else if (id == "Strings")
             {
