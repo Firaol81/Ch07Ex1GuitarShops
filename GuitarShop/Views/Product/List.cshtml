@@ -8,16 +8,23 @@
     <div class="col-sm-2">
         <ul class="list-group">
             <li class="list-group-item">
-                <a asp-controller="Product" asp-action="List" asp-route-id="All" 
-                    class="list-group-item 
+                <a asp-controller="Product" asp-action="List" asp-route-id="All"
+                   class="list-group-item
                     @(ViewBag.SelectedCategoryName == "All" ? "active" : "")">
                     All
+                </a>
+            </li>
+            <li class="list-group-item">
+                <a asp-controller="Product" asp-action="List" asp-route-id="Strings"
+                   class="list-group-item
+                    @(ViewBag.SelectedCategoryName == "Strings" ? "active" : "")">
+                    Strings
                 </a>
             </li>
             @foreach (Category c in ViewBag.Categories)
             {
                 <li class="list-group-item">
-                    <a asp-controller="Product" asp-action="List" asp-route-id="@c.Name" 
+                    <a asp-controller="Product" asp-action="List" asp-route-id="@c.Name"
                        class="list-group-item
                              @(ViewBag.SelectedCategoryName == c.Name ? "active" : "")">
                         @c.Name
@@ -35,6 +42,7 @@
                     <th>Price</th>
                     <th></th>
                     <th></th>
+                </tr>
             </thead>
             <tbody>
                 @foreach (var product in Model)
